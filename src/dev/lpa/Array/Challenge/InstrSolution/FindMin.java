@@ -1,4 +1,4 @@
-package dev.lpa.Array.VariableArguments.InstSolution;
+package dev.lpa.Array.VariableArguments.InstrSolution;
 
 import java.util.Arrays;
 import java.util.Scanner;
