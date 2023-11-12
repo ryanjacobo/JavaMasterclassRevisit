@@ -1,4 +1,4 @@
-package dev.lpa.Array;
+package dev.lpa.Array.VariableArguments;
 
 public class VariableArguments {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package dev.lpa.ListLesson.Challenge;
+package dev.lpa.ListLesson.Challenge.MobilePhone;
 
 import java.util.ArrayList;
 
@@ -6,26 +6,21 @@ public class MobilePhone {
     private String myNumber;
     private ArrayList<Contact> myContacts;
 
-    public static void main(String[] args) {
-        MobilePhone ryanPhone = new MobilePhone("650-793-9870");
-        Contact abby = new Contact("Abby", "650-987-6541");
-        ryanPhone.addNewContact(abby);
-        ryanPhone.printContacts();
-    }
-
     public MobilePhone(String myNumber) {
         this.myNumber = myNumber;
-        this.myContacts = new ArrayList<>(myContacts);
+        this.myContacts = new ArrayList<Contact>();
     }
 
+    // gets the index of contact
     public int findContact(Contact contact){
         return myContacts.indexOf(contact);
     }
 
+    // gets the index when contact name is provided
     public int findContact(String name){
       for(int i = 0; i < myContacts.size(); i++){
             Contact contact = myContacts.get(i);
-            if(contact.getPhoneNumber().equals(name)){
+            if(contact.getName().equals(name)){
                 return i;
             }
       }
@@ -71,30 +66,9 @@ public class MobilePhone {
 
     public void printContacts(){
         System.out.println("Contact List: ");
-        for(int i = 0; i < myContacts.size(); i++){
+        for(int i = 0; i < this.myContacts.size(); i++){
             System.out.println(i + 1 + ". " + this.myContacts.get(i).getName() + " -> " + this.myContacts.get(i).getPhoneNumber());
         }
     }
 }
 
-class Contact{
-    private String name;
-    private String phoneNumber;
-
-    public Contact(String name, String phoneNumber) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public Contact createContact(String name, String phoneNumber){
-        return new Contact(name, phoneNumber);
-    }
-}

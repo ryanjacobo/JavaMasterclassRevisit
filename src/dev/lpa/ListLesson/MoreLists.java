@@ -1,4 +1,4 @@
-package dev.lpa.ArrayListLesson;
+package dev.lpa.ListLesson;
 
 import java.util.*;
 
@@ -6,14 +6,15 @@ public class MoreLists {
 
     public static void main(String[] args) {
         String[] items = {"apples", "bananas", "milk", "eggs"};
-        List<String> list = List.of(items);
+        List<String> list = List.of(items); // creates a List of Array (List.of(items)
         System.out.println(list);
         System.out.println(list.getClass().getName()); // items is an immutable collection within a List
 //        list.add("yogurt"); // not permissible
 
         // converting an Array to a List
-        ArrayList<String> groceries = new ArrayList<>(list);
+        ArrayList<String> groceries = new ArrayList<>(list); // "()" stores the array to be added to the list and makes it mutable
         groceries.add("yogurt");
+        groceries.remove("apples");
         System.out.println(groceries);
 
         ArrayList<String> nextList = new ArrayList<>(List.of("pickles", "mustard", "cheese"));

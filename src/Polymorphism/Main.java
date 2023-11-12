@@ -14,6 +14,7 @@ public class Main {
 
         Movie theMovie = Movie.getMovie("S", "Star Wars");
         theMovie.watchMovie();
+
         Scanner s = new Scanner(System.in);
 //        while(true){
 //            System.out.println("Enter Type (A for Adventure, C for Comedy, S for Science Fiction, or Q to quit): " );
@@ -55,27 +56,26 @@ public class Main {
         }
 
         System.out.println("---Car Class---");
-        Object unknownCar = Car.createCar("G", "Tacoma");
-        System.out.println(unknownCar.getClass().getSimpleName());
-        if(unknownCar.getClass().getSimpleName() == "GasPoweredCar"){
-            GasPoweredCar g = (GasPoweredCar) unknownCar;
-            g.startGasEngine();
-        }
-        Car bmw = new GasPoweredCar("BMW");
-        bmw.startEngine();
-        Car tesla = new ElectricCar("Tesla");
-        tesla.startEngine();
-        Car prius = new HybridCar("Prius");
-        prius.startEngine();
-
-        Car gasCar = Car.createCar("g", "Mustang");
-        gasCar.startEngine();
-
+//        Object unknownCar = Car.createCar("G", "Tacoma");
+//        System.out.println(unknownCar.getClass().getSimpleName());
+//        if(unknownCar.getClass().getSimpleName() == "GasPoweredCar"){
+//            GasPoweredCar g = (GasPoweredCar) unknownCar;
+//            g.startEngine();
+//        }
         Car ferrari = new Car("2022 Blue Ferrari 296 GTS");
         runRace(ferrari);
 
         Car ferrari2 = new GasPoweredCar("2022 Blue Ferrari 296 GTS", 15.4, 6);
         runRace(ferrari2);
+        Car tesla = new ElectricCar("2022 Red Tesla Model 3", 568, 75);
+        runRace(tesla);
+        Car ferrariHybrid = new HybridCar("2022 Black Ferrari SF90 Stradale", 16, 8, 8);
+        runRace(ferrariHybrid);
+//
+//        Car gasCar = Car.createCar("g", "Mustang");
+//        gasCar.startEngine();
+
+
     }
 
     public static void runRace(Car car){

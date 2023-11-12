@@ -7,14 +7,14 @@ public class Car {
         this.description = description;
     }
 
-    public static Car createCar(String type, String description){
-        return switch(type.toUpperCase().charAt(0)){
-            case 'G' -> new GasPoweredCar(description);
-            case 'C' -> new ElectricCar(description);
-            case 'H' -> new HybridCar(description);
-            default -> new Car(description);
-        };
-    }
+//    public static Car createCar(String type, String description){
+//        return switch(type.toUpperCase().charAt(0)){
+//            case 'G' -> new HybridCar(description);
+//            case 'C' -> new HybridCar(description);
+//            case 'H' -> new HybridCar(description);
+//            default -> new Car(description);
+//        };
+//    }
     public void startEngine(){
 //        String instanceType = this.getClass().getSimpleName();
 //        System.out.println(description + " is a " + instanceType + " car.");
@@ -33,7 +33,7 @@ public class Car {
 
 class GasPoweredCar extends Car{
     private double avgKmPerLiter;
-    private int cylinders = 6;
+    private int cylinders;
     public GasPoweredCar(String description) {
         super(description);
     }
@@ -53,38 +53,56 @@ class GasPoweredCar extends Car{
     protected void runEngine() {
         System.out.printf("Gas -> usage exceeds the average: %.2f %n", avgKmPerLiter);
     }
-
-    public void startGasEngine(){
-        System.out.println("Gas engine started!");
-    }
 }
 
+
 class ElectricCar extends Car{
+    private double avgKmPerCharge;
+    private int batterySize;
     public ElectricCar(String description) {
         super(description);
     }
 
-    @Override
-    public void startEngine() {
-        super.startEngine();
+    public ElectricCar(String description, double avgKmPerCharge, int batterySize) {
+        super(description);
+        this.avgKmPerCharge = avgKmPerCharge;
+        this.batterySize = batterySize;
     }
 
-    public void startGasEngine(){
-        System.out.println("Electric motor started!");
+    @Override
+    public void startEngine() {
+        System.out.printf("BEV -> switch %d KWh battery on, Ready!%n", batterySize);
+    }
+
+    @Override
+    protected void runEngine() {
+        System.out.printf("BEV -> usage under the average: %.2f %n", avgKmPerCharge);
     }
 }
 
 class HybridCar extends Car{
+    private double avgKmPerLiter;
+    private int cylinders;
+    private int batterySize;
     public HybridCar(String description) {
         super(description);
     }
 
-    @Override
-    public void startEngine() {
-        super.startEngine();
+    public HybridCar(String description, double avgKmPerLiter, int cylinders, int batterySize) {
+        super(description);
+        this.avgKmPerLiter = avgKmPerLiter;
+        this.cylinders = cylinders;
+        this.batterySize = batterySize;
     }
 
-    public void startGasEngine(){
-        System.out.println("Hybrid engine started!");
+    @Override
+    public void startEngine() {
+        System.out.printf("Hybrid ->%d cylinders are fired up.%n", cylinders);
+        System.out.printf("Hybrid -> switch %d KWh battery on, Ready!%n", batterySize);
+    }
+
+    @Override
+    protected void runEngine() {
+        System.out.printf("Hybrid -> usage below average: %.2f %n", avgKmPerLiter);
     }
 }

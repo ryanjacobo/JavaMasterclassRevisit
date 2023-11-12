@@ -1,8 +1,6 @@
-package dev.lpa.ArrayListLesson.Challenge;
+package dev.lpa.ListLesson.Challenge;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     private static ArrayList<String> groceryList = new ArrayList<>();
@@ -14,6 +12,7 @@ public class Main {
 
     public static void startProgram(){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Available actions:");
         System.out.println("0 - to shutdown");
         System.out.println("1 - to add item(s) to list (comma delimited list)");
         System.out.println("2 - to remove any items (comma delimited list)");
@@ -21,14 +20,13 @@ public class Main {
         int input = scanner.nextInt();
             switch(input){
                 case 0 -> System.out.println("Good bye!");
-                case 1 -> addItems();
-                case 2 -> removeItems();
+                case 1 -> addItems(groceryList);
+                case 2 -> removeItems(groceryList);
                 default -> System.out.println("Invalid Input");
             }
     }
 
-    public static void addItems(){
-//        Scanner scanner = new Scanner(System.in);
+    public static void addItems(ArrayList<String> groceryList){
         System.out.println("Type grocery items(separated by comma).");
         String input = scanner.nextLine();
         String[] items = input.split(",");
@@ -45,19 +43,27 @@ public class Main {
         startProgram();
     }
 
-    public static void removeItems(){
-//        Scanner scanner = new Scanner((System.in));
+    public static void removeItems(ArrayList<String> groceryList){
         System.out.println("Type the item(s) that you would like to remove from the list(separated by comma).");
         String input = scanner.nextLine();
         String[] items = input.split(",");
+        List<String> removed = new ArrayList<>();
         for(int i = 0; i < items.length; i++){
             String trimmed = items[i].trim();
             if(groceryList.contains(trimmed)){
+                removed.add(trimmed);
                 groceryList.remove(trimmed);
             } else {
                 System.out.println(trimmed + " is not in the list.");
             }
         }
+       for(int i = 0; i < removed.size(); i++){
+            System.out.print(removed.get(i));
+            if(i < removed.size() - 1){
+                System.out.print(", ");
+            }
+        }
+        System.out.println(" removed");
         groceryList.sort(Comparator.naturalOrder());
         System.out.println("Grocery items: " + groceryList);
         startProgram();

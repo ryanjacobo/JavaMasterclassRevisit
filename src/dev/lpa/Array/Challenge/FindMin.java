@@ -1,9 +1,9 @@
-package dev.lpa.Array.VariableArguments;
+package dev.lpa.Array.Challenge;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Challenge {
+public class FindMin {
     public static void main(String[] args) {
         int[] intArr = readIntegers(5);
         System.out.println("Minimum el: " + findMin(intArr));

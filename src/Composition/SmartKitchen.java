@@ -6,6 +6,7 @@ public class SmartKitchen{
    private DishWasher dishWasher;
    private Microwave microwave;
 
+   // constructs all the appliances in one instantiation
    public SmartKitchen() {
       brewMaster = new CoffeeMaker();
       iceBox = new Refrigerator();

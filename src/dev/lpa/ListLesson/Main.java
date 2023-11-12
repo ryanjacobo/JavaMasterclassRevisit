@@ -1,4 +1,4 @@
-package dev.lpa.ArrayListLesson;
+package dev.lpa.ListLesson;
 
 import java.util.ArrayList;
 import java.util.Arrays;

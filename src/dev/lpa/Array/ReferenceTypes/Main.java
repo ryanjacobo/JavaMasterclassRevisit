@@ -1,4 +1,4 @@
-package dev.lpa.ReferenceTypes;
+package dev.lpa.Array.ReferenceTypes;
 
 import java.util.Arrays;
 

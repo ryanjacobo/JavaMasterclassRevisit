@@ -8,13 +8,11 @@ public class Movie {
     }
 
     public void watchMovie() {
-
         String instanceType = this.getClass().getSimpleName();
-        System.out.println(title + " is a " + instanceType + " film");
+        System.out.println(title + " is a(n) " + instanceType + " film");
     }
 
     public static Movie getMovie(String type, String title) {
-
         return switch (type.toUpperCase().charAt(0)) {
             case 'A' -> new Adventure(title);
             case 'C' -> new Comedy(title);
@@ -25,7 +23,6 @@ public class Movie {
 }
 
 class Adventure extends Movie {
-
     public Adventure(String title) {
         super(title);
     }
