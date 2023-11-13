@@ -6,7 +6,7 @@ public class MoreLists {
 
     public static void main(String[] args) {
         String[] items = {"apples", "bananas", "milk", "eggs"};
-        List<String> list = List.of(items); // creates a List of Array (List.of(items)
+        List<String> list = List.of(items); // creates a List of Array (List.of(items))
         System.out.println(list);
         System.out.println(list.getClass().getName()); // items is an immutable collection within a List
 //        list.add("yogurt"); // not permissible

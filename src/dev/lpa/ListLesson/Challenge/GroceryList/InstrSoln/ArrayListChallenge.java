@@ -1,4 +1,4 @@
-package dev.lpa.ListLesson.Challenge.InstrSoln;
+package dev.lpa.ListLesson.Challenge.GroceryList.InstrSoln;
 
 import java.util.ArrayList;
 import java.util.Comparator;

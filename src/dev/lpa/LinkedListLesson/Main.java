@@ -77,7 +77,7 @@ public class Main {
         System.out.println("Index of Melbourne = " + list.lastIndexOf("Melbourne")); // works for elements that have duplicate in the List
 
         // queue retrieval method
-        System.out.println("Element from element() = " + list.element()); // first element
+        System.out.println("Element from element() = " + list.element()); // element() - gets the first element on the list
 
         // stack retrieval methods
         System.out.println("Element from peek() = " + list.peek());
@@ -115,6 +115,7 @@ public class Main {
             }
 //            System.out.println(iterator.next());
         }
+
         // hasPrevious()/previous() enables reverse iteration
         while(iterator.hasPrevious()){
             System.out.println(iterator.previous());

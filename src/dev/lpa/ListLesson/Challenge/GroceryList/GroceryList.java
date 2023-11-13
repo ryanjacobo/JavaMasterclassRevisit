@@ -1,8 +1,8 @@
-package dev.lpa.ListLesson.Challenge;
+package dev.lpa.ListLesson.Challenge.GroceryList;
 
 import java.util.*;
 
-public class Main {
+public class GroceryList {
     private static ArrayList<String> groceryList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
