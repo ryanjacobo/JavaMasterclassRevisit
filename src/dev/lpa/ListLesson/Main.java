@@ -11,7 +11,6 @@ import java.util.LinkedList;
 public class Main {
     public static void main(String[] args) {
         Album album = new Album("Stormbringer", "Deep Purple");
-//        AlbumInstr album = new AlbumInstr("Stormbringer", "Deep Purple");
         album.addSong("Stormbringer", 4.6);
         album.addSong("Love don't mean a thing", 4.22);
         album.addSong("Holy man", 4.3);
@@ -23,11 +22,9 @@ public class Main {
         album.addSong("Soldier of fortune", 3.13);
         System.out.println(album);
         ArrayList<Album> albums = new ArrayList<>();
-//        ArrayList<AlbumInstr> albums = new ArrayList<>();
         albums.add(album);
 
         album = new Album("For those about to rock", "AC/DC");
-//        album = new AlbumInstr("For those about to rock", "AC/DC");
         album.addSong("For those about to rock", 5.44);
         album.addSong("I put the finger on you", 3.25);
         album.addSong("Lets go", 3.45);
@@ -45,8 +42,10 @@ public class Main {
         LinkedList<Song> playList = new LinkedList<>();
         albums.get(0).addToPlayList("You can't do it right", playList);
         albums.get(0).addToPlayList("Holy man", playList);
+        albums.get(0).addToPlayList("Holy man", playList); // duplicate
         albums.get(0).addToPlayList("Speed king", playList);  // Does not exist
         albums.get(0).addToPlayList(9, playList);
+        albums.get(0).addToPlayList(9, playList); // duplicate
         albums.get(1).addToPlayList(3, playList);
         albums.get(1).addToPlayList(2, playList);
         albums.get(1).addToPlayList(24, playList);  // There is no track 24
