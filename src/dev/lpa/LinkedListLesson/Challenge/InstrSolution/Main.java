@@ -48,10 +48,11 @@ public class Main {
             switch(menuItem){
                 case "F":
                     System.out.println("User wants to go forward");
+                    // to not repeat the city when reversing direction
                     if (!forward) {           // Reversing Direction
                         forward = true;
                         if (iterator.hasNext()) {
-                            iterator.next();  // Adjust position forward
+                            iterator.next();  // Adjust position forward, move pass the current place first
                         }
                     }
 
@@ -61,6 +62,7 @@ public class Main {
                     break;
                 case "B":
                     System.out.println("User wants to go backwards");
+                    // to not repeat the city when reversing direction
                     if (forward) {           // Reversing Direction
                         forward = false;
                         if (iterator.hasPrevious()) {

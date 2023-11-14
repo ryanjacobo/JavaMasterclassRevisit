@@ -1,44 +1,55 @@
 package dev.lpa.ListLesson;
 
+import dev.lpa.LinkedListLesson.Exercise.Album;
+import dev.lpa.LinkedListLesson.Exercise.AlbumInstr;
+import dev.lpa.LinkedListLesson.Exercise.Song;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-
-record GroceryItem(String name, String department, int count){
-    // constructor with default type and count
-    public GroceryItem(String name){
-        this(name, "DIARY", 1);
-    }
-
-    @Override
-    public String toString(){
-        return String.format("%d %s in %s", count, name.toUpperCase(), department);
-    }
-}
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        // Array
-        GroceryItem[] groceryArray = new GroceryItem[3];
-        groceryArray[0] = new GroceryItem("milk");
-        groceryArray[1] = new GroceryItem("apples", "PRODUCE", 4);
-        groceryArray[2] = new GroceryItem("pineapple", "PRODUCE", 2);
-        System.out.println(Arrays.toString(groceryArray));
+        Album album = new Album("Stormbringer", "Deep Purple");
+//        AlbumInstr album = new AlbumInstr("Stormbringer", "Deep Purple");
+        album.addSong("Stormbringer", 4.6);
+        album.addSong("Love don't mean a thing", 4.22);
+        album.addSong("Holy man", 4.3);
+        album.addSong("Hold on", 5.6);
+        album.addSong("Lady double dealer", 3.21);
+        album.addSong("You can't do it right", 6.23);
+        album.addSong("High ball shooter", 4.27);
+        album.addSong("The gypsy", 4.2);
+        album.addSong("Soldier of fortune", 3.13);
+        System.out.println(album);
+        ArrayList<Album> albums = new ArrayList<>();
+//        ArrayList<AlbumInstr> albums = new ArrayList<>();
+        albums.add(album);
 
-        // ArrayList
-        ArrayList objectList = new ArrayList();
-        objectList.add(new GroceryItem("Butter"));
-        objectList.add("Yogurt");
-        System.out.println(objectList);
+        album = new Album("For those about to rock", "AC/DC");
+//        album = new AlbumInstr("For those about to rock", "AC/DC");
+        album.addSong("For those about to rock", 5.44);
+        album.addSong("I put the finger on you", 3.25);
+        album.addSong("Lets go", 3.45);
+        album.addSong("Inject the venom", 3.33);
+        album.addSong("Snowballed", 4.51);
+        album.addSong("Evil walks", 3.45);
+        album.addSong("C.O.D.", 5.25);
+        album.addSong("Breaking the rules", 5.32);
+        album.addSong("Night of the long knives", 5.12);
+        System.out.println(album);
 
-        // ArrayList
-        ArrayList<GroceryItem> groceryList = new ArrayList<>();
-        groceryList.add(new GroceryItem("Butter"));
-        groceryList.add(new GroceryItem("milk"));
-        groceryList.add(new GroceryItem("oranges", "PRODUCE", 6));
-        groceryList.add(0, new GroceryItem("bacon", "FROZEN", 1));
-        groceryList.set(0, new GroceryItem("ice cream", "FROZEN", 1)); // "set" replaces the element in the index
-        groceryList.remove(1);
-        System.out.println(groceryList);
-        groceryList.toString();
+        albums.add(album);
+        System.out.println(albums);
+
+        LinkedList<Song> playList = new LinkedList<>();
+        albums.get(0).addToPlayList("You can't do it right", playList);
+        albums.get(0).addToPlayList("Holy man", playList);
+        albums.get(0).addToPlayList("Speed king", playList);  // Does not exist
+        albums.get(0).addToPlayList(9, playList);
+        albums.get(1).addToPlayList(3, playList);
+        albums.get(1).addToPlayList(2, playList);
+        albums.get(1).addToPlayList(24, playList);  // There is no track 24
+        System.out.println(playList);
     }
 }
