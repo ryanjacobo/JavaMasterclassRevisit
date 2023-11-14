@@ -37,6 +37,7 @@ public class Album {
             Song song = findSong(title);
             // song must be in the album first
             if(song != null){
+                // in case of duplication
                 if(playlist.contains(song)){
                     System.out.println(title + " is already in the Playlist.");
                     return false;
