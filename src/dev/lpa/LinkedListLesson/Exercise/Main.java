@@ -1,4 +1,4 @@
-package dev.lpa.ListLesson;
+package dev.lpa.LinkedListLesson.Exercise;
 
 import dev.lpa.LinkedListLesson.Exercise.Album;
 import dev.lpa.LinkedListLesson.Exercise.AlbumInstr;
@@ -10,6 +10,8 @@ import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
+        Song enterSandman = new Song("Enter Sandman", 3.50);
+        System.out.println(enterSandman);
         Album album = new Album("Stormbringer", "Deep Purple");
         album.addSong("Stormbringer", 4.6);
         album.addSong("Love don't mean a thing", 4.22);

@@ -13,9 +13,22 @@ public class Song {
         return title;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%s: %.2f", title, duration);
+    public double getDuration() {
+        return duration;
     }
 
+    //    @Override
+//    public String toString() {
+//        return String.format("%s: %.2f", title, duration);
+//    }
+
+
+    @Override
+    public String toString() {
+        return title + ": " + duration;
+//        return "Song{" +
+//                "title='" + title + '\'' +
+//                ", duration=" + duration +
+//                '}';
+    }
 }
