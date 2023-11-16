@@ -1,4 +1,4 @@
-package OOPMasterChallenge.GivenSolution;
+package OOPMasterChallenge.InstrSolution;
 // creates additional items to be added to the meal i.e. drinks, side, dessert
 public class Item {
     private String type;

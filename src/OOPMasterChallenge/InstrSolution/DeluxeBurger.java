@@ -1,4 +1,4 @@
-package OOPMasterChallenge.GivenSolution;
+package OOPMasterChallenge.InstrSolution;
 
 public class DeluxeBurger extends Burger{
 

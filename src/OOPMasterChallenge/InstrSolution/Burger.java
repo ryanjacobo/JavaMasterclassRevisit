@@ -1,4 +1,4 @@
-package OOPMasterChallenge.GivenSolution;
+package OOPMasterChallenge.InstrSolution;
 // Inheritance
 public class Burger extends Item {
     private Item extra1;
