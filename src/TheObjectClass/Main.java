@@ -1,8 +1,8 @@
 package TheObjectClass;
 
-import Inheritance.Employee;
-import Inheritance.HourlyEmployee;
-import Inheritance.SalariedEmployee;
+import Inheritance.Subclass.Employee;
+import Inheritance.Subclass.HourlyEmployee;
+import Inheritance.Subclass.SalariedEmployee;
 
 // implicitly extends Object
 public class Main {

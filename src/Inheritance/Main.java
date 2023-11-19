@@ -1,5 +1,12 @@
 package Inheritance;
 
+import Inheritance.Parent.Animal;
+import Inheritance.Parent.Circle;
+import Inheritance.Parent.Rectangle;
+import Inheritance.Subclass.Cuboid;
+import Inheritance.Subclass.Cylinder;
+import Inheritance.Subclass.Dog;
+
 public class Main {
     public static void main(String[] args) {
         Animal animal = new Animal("Animal", 1, 1, 5, 5);
