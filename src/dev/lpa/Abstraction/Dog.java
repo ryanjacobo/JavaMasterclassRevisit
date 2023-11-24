@@ -29,8 +29,4 @@ public class Dog extends Mammal{
         }
     }
 
-    public void doAnimalStuff(Animal animal){
-        animal.makeNoise();
-        animal.move("slow");
-    }
 }

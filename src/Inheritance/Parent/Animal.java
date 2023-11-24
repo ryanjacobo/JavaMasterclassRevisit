@@ -1,14 +1,14 @@
 package Inheritance.Parent;
 
 public class Animal {
-    private String name;
+    private String type;
     private int brain;
     private int body;
     private int size;
     private int weight;
 
-    public Animal(String name, int brain, int body, int size, int weight){
-        this.name = name;
+    public Animal(String type, int brain, int body, int size, int weight){
+        this.type = type;
         this.brain = brain;
         this.body = body;
         this.size = size;
@@ -23,8 +23,8 @@ public class Animal {
         System.out.println("Animal is moving at speed " + speed);
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
     public int getBrain() {

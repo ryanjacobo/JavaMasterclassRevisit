@@ -1,32 +1,25 @@
 package dev.lpa.Abstraction.Challenge;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Store {
+
+    // Manage a list of products for sale
     private static ArrayList<ProductForSale> storeProducts = new ArrayList<>();
 
     public static void main(String[] args) {
         storeProducts.add(new Shoes("Leather", 50, "Italian casual leather shoes."));
-        storeProducts.add(new Shoes("Rubber", 70, "Limited Nike sneakers."));
-
-        ProductForSale jordan = new ProductForSale("Rubber", 100, "Jordan 1") {
-            @Override
-            public void showDetails() {
-                System.out.println("This " + type + " is are popular pair of shoes.");
-                System.out.printf("This price of the shoes is $%.2f %n", price);
-                System.out.println(description);
-            }
-        };
-
-        System.out.println(jordan.getPrice(2));
-        jordan.printPricedItem(2);
-        storeProducts.add(jordan);
+        storeProducts.add(new Shoes("Rubber", 70, "Limited Ed Nike sneakers."));
 
         storeProducts.add(new Furniture("Desk", 500, "Mahogany Desk"));
         storeProducts.add(new Furniture("Lamp", 200, "Tiffany Lamp with Hummingbirds"));
-
+        storeProducts.add(new Bicycle("Santa Cruz", 5000, "RockShox suspension with SRAM X01 drivetrain components."));
+        System.out.println("-".repeat(30));
         listProducts();
 
+        // Manage an order which can just be a list of OrderItem objects
         System.out.println("\nOrder 1");
         var order1 = new ArrayList<OrderItem>();
         addItemToOrder(order1, 1, 2);
@@ -36,22 +29,22 @@ public class Store {
 
 
         System.out.println("\nOrder 2");
-        var order2 = new ArrayList<OrderItem>();
+        ArrayList<OrderItem> order2 = new ArrayList<>();
         addItemToOrder(order2, 3, 2);
-        addItemToOrder(order2, 4, 1);
-        addItemToOrder(order2, 0, 2);
+        addItemToOrder(order2, 4, 2);
         printOrder(order2);
     }
 
     public static void listProducts() {
         for(var item : storeProducts){
-            System.out.println("-".repeat(30));
             item.showDetails();
+            System.out.println("-".repeat(30));
         }
     }
 
-    public static void addItemToOrder(ArrayList<OrderItem> order, int orderIndex, int qty){
-        order.add(new OrderItem(qty, storeProducts.get(orderIndex)));
+    // Create a method to add an item to the order. "order" = new ArrayList<OrderItem>()
+    public static void addItemToOrder(ArrayList<OrderItem> order, int productIndex, int qty){
+        order.add(new OrderItem(qty, storeProducts.get(productIndex)));
     }
 
     public static void printOrder(ArrayList<OrderItem> order){
@@ -64,4 +57,4 @@ public class Store {
     }
 }
 
-record OrderItem(int qty, ProductForSale product){}
+//record OrderItem(int qty, ProductForSale product){}

@@ -22,15 +22,16 @@ public class Main {
 
         for(Animal animal : animals){
             doAnimalStuff(animal);
-            if(animal instanceof Mammal currentMammal){
-                currentMammal.shedHair();
+            if(animal instanceof Mammal currentAnimal){
+                currentAnimal.shedHair();
             }
         }
 
     }
 
     private static void doAnimalStuff(Animal animal){
+        // using abstract methods
         animal.makeNoise();
-        animal.move("slow");
+        animal.move("not slow");
     }
 }

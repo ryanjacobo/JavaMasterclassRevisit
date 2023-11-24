@@ -1,6 +1,6 @@
 package dev.lpa.Abstraction.Exercise;
 
-public abstract class Node extends ListItem{
+public class Node extends ListItem{
 
     public Node(Object value) {
         super(value);
@@ -28,7 +28,10 @@ public abstract class Node extends ListItem{
 
 
     @Override
-    Object compareTo(Object item) {
+    Object compareTo(ListItem item) {
+//        if(){
+//
+//        }
         return null;
     }
 }

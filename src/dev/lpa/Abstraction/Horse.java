@@ -7,9 +7,7 @@ public class Horse extends Mammal{
     }
 
     @Override
-    public void makeNoise() {
-
-    }
+    public void makeNoise() {}
 
     @Override
     public void shedHair() {

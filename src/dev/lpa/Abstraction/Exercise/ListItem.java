@@ -17,6 +17,7 @@ public abstract class ListItem {
     abstract ListItem setPrevious(ListItem item);
     abstract Object compareTo(ListItem item);
 
+
     public Object getValue() {
         return value;
     }
@@ -24,6 +25,4 @@ public abstract class ListItem {
     public void setValue(Object value) {
         this.value = value;
     }
-
-    abstract Object compareTo(Object item);
 }

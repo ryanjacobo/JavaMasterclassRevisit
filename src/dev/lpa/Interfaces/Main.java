@@ -1,6 +1,13 @@
 package dev.lpa.Interfaces;
 
+import dev.lpa.Interfaces.Interfaces.FlightEnabled;
+import dev.lpa.Interfaces.Interfaces.OrbitEarth;
+import dev.lpa.Interfaces.Interfaces.Trackable;
 import dev.lpa.Interfaces.Parent.Animal;
+import dev.lpa.Interfaces.Subclasses.Bird;
+import dev.lpa.Interfaces.Subclasses.Jet;
+import dev.lpa.Interfaces.Subclasses.Satellite;
+import dev.lpa.Interfaces.Subclasses.Truck;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

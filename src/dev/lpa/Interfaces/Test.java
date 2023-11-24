@@ -1,5 +1,12 @@
 package dev.lpa.Interfaces;
 
+import dev.lpa.Interfaces.Enums.FlightStages;
+import dev.lpa.Interfaces.Interfaces.FlightEnabled;
+import dev.lpa.Interfaces.Interfaces.OrbitEarth;
+import dev.lpa.Interfaces.Interfaces.Trackable;
+import dev.lpa.Interfaces.Subclasses.Jet;
+import dev.lpa.Interfaces.Subclasses.Satellite;
+
 public class Test {
     public static void main(String[] args) {
         System.out.println("------inFlights method-------");

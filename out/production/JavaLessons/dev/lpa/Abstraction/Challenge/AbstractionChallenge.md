@@ -3,7 +3,7 @@ Build an application that can be a store front for any imaginable item for sale.
 Create a **Store** class with a main method. The **Store** class should:
 * Manage a **list of products for sale**, including displaying the product details.
 * Manage an order which can just be a **list of OrderItem** objects.
-* Have methods to **add an item to the order**, and **print the ordered items**, so it looks like a sales receipt.
+* Create a method to **add an item to the order**, and **print the ordered items**, so it looks like a sales receipt.
 
 Create a **ProductForSale** class that should have at least three fields: a **type**, **price**, and a **description**, and should have methods to:
 * get a Sales Price, a **concrete method**, which takes a **quantity**, and **returns the quantity times the price**.
@@ -13,3 +13,6 @@ Create a **ProductForSale** class that should have at least three fields: a **ty
 Create an **OrderItem** type, that has at a minimum 2 fields, **quantity** and a **Product for Sale**.
 
 You should create **two or three classes that extend the ProductForSale class**, that will be products in your store.
+
+### The Design
+![img.png](img.png)
