@@ -4,5 +4,6 @@ import java.util.List;
 
 public interface ISaveable {
     List<String> write();
-    List<String> read();
+
+    void read(List<String> sendValues);
 }

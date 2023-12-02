@@ -1,6 +1,6 @@
 package dev.lpa.Abstraction;
 
-// an abstract class is called with the the word "extends"
+// an abstract class is called with the word "extends"
 public abstract class Animal {
     protected String type;
     private String size;
@@ -18,7 +18,7 @@ public abstract class Animal {
 
     // "final" keeps method from being overridden by a class
     public final String getExplicitType(){
-        return getClass().getSimpleName() + " (" + type + ")";
+        return getClass().getSimpleName() + " (" + type + ")"; // type can be accessed outside since it's "protected"
     }
 }
 

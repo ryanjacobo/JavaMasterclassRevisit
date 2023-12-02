@@ -6,28 +6,29 @@ import dev.lpa.Interfaces.Parent.Animal;
 
 // extends Animal and implements Trackable and FlightEnabled
 public class Bird extends Animal implements Trackable, FlightEnabled {
+    // the subclass of an abstract class doesn't have to call the constructor of the abstract class
     @Override
     public void move() {
-        System.out.println("Flaps wings");
+        System.out.println(getExplicitType() + " Flaps wings");
     }
 
     @Override
     public void takeOff() {
-        System.out.println(getClass().getSimpleName() + " is taking off");
+        System.out.println(getExplicitType() + " is taking off");
     }
 
     @Override
     public void land() {
-        System.out.println(getClass().getSimpleName() + " is landing");
+        System.out.println(getExplicitType()  + " is landing");
     }
 
     @Override
     public void fly() {
-        System.out.println(getClass().getSimpleName() + " is flying");
+        System.out.println(getExplicitType() + " is flying");
     }
 
     @Override
     public void track() {
-        System.out.println(getClass().getSimpleName() + "'s coordinates recorded");
+        System.out.println(getExplicitType() + "'s coordinates recorded");
     }
 }

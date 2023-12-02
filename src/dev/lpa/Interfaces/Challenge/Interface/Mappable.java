@@ -1,5 +1,6 @@
 package dev.lpa.Interfaces.Challenge.Interface;
 
+import dev.lpa.Interfaces.Challenge.Enums.Color;
 import dev.lpa.Interfaces.Challenge.Enums.Geometry;
 
 public interface Mappable {

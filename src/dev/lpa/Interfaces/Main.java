@@ -18,45 +18,52 @@ public class Main {
 
     public static void main(String[] args) {
         Bird bird = new Bird();
+//        bird can be assigned to 3 other reference types - Animal, FlightEnabled, Trackable
         Animal animal = bird;
-//        FlightEnabled flier = bird;
-//        Trackable tracked = bird;
         animal.move();
+        FlightEnabled flier = bird; // assigning bird (not instantiating)
+        flier.takeOff();
+        Trackable tracked = bird;
+        tracked.track();
 
-        bird.takeOff();
-        bird.fly();
-        bird.track();
-        bird.land();
+        System.out.println("-".repeat(40));
+        inFlight(flier);
 
-        inFlights(bird);
+        System.out.println("-".repeat(40));
+        Jet f16 = new Jet();
+        inFlight(f16);
 
-        inFlights(new Jet());
-
+        System.out.println("-".repeat(40));
         Truck truck = new Truck();
         truck.track();
 
         double kmsTraveled = 100;
         double milesTraveled = kmsTraveled * FlightEnabled.KM_TO_MILES;
-        System.out.printf("The truck traveled % .2fkm or %.2f miles%n", kmsTraveled, milesTraveled);
+        System.out.printf("The truck traveled %.2fkm or %.2f miles%n", kmsTraveled, milesTraveled);
+        System.out.printf("The truck traveled %.2fkm or %.2f miles%n", milesTraveled, milesTraveled * FlightEnabled.MILES_TO_KM);
 
-        List<FlightEnabled> fliers = new ArrayList<>();
-        fliers.add(bird);
-
-        List<FlightEnabled> betterFliers = new LinkedList<>();
-        betterFliers.add(bird);
+        System.out.println("-".repeat(40));
+        Bird eagle = new Bird();
+        ArrayList<FlightEnabled> fliers = new ArrayList<>();
+        fliers.add(eagle);
 
         takeOffFliers(fliers);
         flyFliers(fliers);
         landFliers(fliers);
 
+        System.out.println("-".repeat(40));
+        List<FlightEnabled> betterFliers = new LinkedList<>();
+        betterFliers.add(f16);
+
         takeOffFliers(betterFliers); // method param must be changed to "List<FlightEnabled>" otherwise only ArrayList Type works
         flyFliers(betterFliers);
         landFliers(betterFliers);
 
-        inFlights(new Satellite());
+        System.out.println("-".repeat(40));
+        inFlight(new Satellite());
     }
 
-    private static void inFlights(FlightEnabled flier){
+    private static void inFlight(FlightEnabled flier){
         flier.takeOff();
         flier.fly();
         if(flier instanceof Trackable tracked){

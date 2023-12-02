@@ -2,46 +2,52 @@ package dev.lpa.Interfaces.Subclasses;
 
 import dev.lpa.Interfaces.Enums.FlightStages;
 import dev.lpa.Interfaces.Interfaces.OrbitEarth;
-import dev.lpa.Interfaces.Interfaces.Trackable;
 
-public class Satellite implements OrbitEarth, Trackable {
+public class Satellite implements OrbitEarth{
 
     FlightStages stage = FlightStages.GROUNDED;
 
 
     public void achieveOrbit() {
-        transition("Orbit was achieved");
+//        transition(getExplicitType() + "has achieved orbit");
+        flightStatus(getExplicitType() + " has achieved orbit");
     }
 
-    public void transition(String description){
-        System.out.println(description);
-        stage = transition(stage);
-        stage.track();
+    private void flightStatus(String description){
+        System.out.println(description); // flightStatus(description)
+        System.out.print(getExplicitType() + " is "); // FlightEnabled.transition(stages)
+        stage = transition(stage);// calls FlightEnabled.transition(stage); calls OrbitEarth.transition(stage)
+        stage.track(); // FlightStages.track()
     }
 
+//    private final String getExplicitType(){
+//        return getClass().getSimpleName();
+//    }
+
+    // extended from FlightEnabled
     @Override
     public void takeOff() {
-        transition("Taking Off");
+        flightStatus(getExplicitType() + " is taking Off");
     }
 
     @Override
     public void land() {
-        transition("Landing");
+        flightStatus(getExplicitType() + " is landing");
     }
 
     @Override
     public void fly() {
+        System.out.println(getExplicitType() + " is flying");
         achieveOrbit();
-        transition("Data collection while Orbiting");
+//        flightStatus("Data collection while Orbiting");
     }
 
-    @Override
-    public void track() {
-        System.out.println(getClass().getSimpleName() + "'s coordinates recorded");
+    public void dataCollection() {
+        flightStatus(getExplicitType() + " is collecting data while Orbiting");
     }
 
     @Override
     public String toString() {
-        return "Satellite{}";
+        return "Satellite instance";
     }
 }

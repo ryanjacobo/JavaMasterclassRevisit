@@ -5,5 +5,9 @@ public abstract class Animal {
 
     // must be implemented to its subclass
     public abstract void move();
+
+    public final String getExplicitType(){
+        return getClass().getSimpleName();
+    }
 }
 

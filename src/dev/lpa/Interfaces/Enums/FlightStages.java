@@ -9,12 +9,13 @@ public enum FlightStages implements Trackable {
     @Override
     public void track() {
         if(this != GROUNDED){
-            System.out.println("Monitoring " + this);
+            System.out.println("Monitoring " + this); // this = LAUNCH, CRUISE, DATA_COLLECTION
         }
     }
 
+    // get next flight stage
     public FlightStages getNextStage(){
-        FlightStages[] allStages = values(); // initialize FlightStages[]
-        return allStages[(ordinal() + 1) % allStages.length]; // (index + 1) % 4
+        FlightStages[] allStages = values(); // initialize FlightStages[], 'values()' is a built-in method provided by Java for enums
+        return allStages[(ordinal() + 1) % allStages.length]; // (index + 1) % 4, retrieves the next stage from the array
     }
 }
