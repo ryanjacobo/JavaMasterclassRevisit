@@ -3,6 +3,9 @@ package ClassesAndObjects;
 import java.awt.*;
 
 public class Main {
+    record LPAStudent(String id, String name, String dateOfBirth, String classList) {
+
+    }
     public static void main(String[] args) {
         System.out.println("---Car Class---");
         Car car = new Car();

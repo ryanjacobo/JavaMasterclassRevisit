@@ -10,6 +10,7 @@ record Affiliation(String name, String type, String countryCode){
     }
 }
 public class Team<T extends Player, S> {
+    // "extends Player" means only accepts Player
     private String teamName;
     private List<T> teamMembers = new ArrayList<>();
     private int totalWins = 0;
