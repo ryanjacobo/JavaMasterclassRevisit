@@ -1,11 +1,6 @@
 package dev.lpa.LinkedListLesson.Exercise;
 
-import dev.lpa.LinkedListLesson.Exercise.Album;
-import dev.lpa.LinkedListLesson.Exercise.AlbumInstr;
-import dev.lpa.LinkedListLesson.Exercise.Song;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Main {
